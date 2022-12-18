@@ -1,7 +1,18 @@
+
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  let found = false;
+  array.forEach((element, index) => {
+     for (let i = 0; i < array.length; i++) {
+        if (i !== index) {
+           if (target === element + array[i]) {
+              found = true;
+           }
+        }
+     }
+  });
+  return found;
 }
-
 /* 
   Write the Big O time complexity of your function here
 */
@@ -32,3 +43,4 @@ if (require.main === module) {
 }
 
 module.exports = hasTargetSum;
+Footer
